@@ -4,316 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Әзірлеушіге арналған ЖИ-құралдары | AI құралдары</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: system-ui, 'Segoe UI', 'Inter', 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #f5f7fe 0%, #e9eef5 100%);
-            color: #0a0f1c;
-            line-height: 1.5;
-            padding: 2rem 1.5rem;
-        }
-
-        .container {
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        /* басты тақырып */
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .header h1 {
-            font-size: 2.7rem;
-            font-weight: 800;
-            background: linear-gradient(125deg, #0B2B40, #1D5B79, #2C7DA0);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.6rem;
-        }
-
-        .header p {
-            font-size: 1.2rem;
-            color: #2c3e50;
-            border-bottom: 2px solid #b9c8e0;
-            display: inline-block;
-            padding-bottom: 0.4rem;
-        }
-
-        /* карточка гриды */
-        .cards-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-            margin-bottom: 3.5rem;
-        }
-
-        .card {
-            background: #ffffff;
-            border-radius: 2rem;
-            box-shadow: 0 20px 32px -12px rgba(0, 0, 0, 0.12);
-            padding: 1.8rem;
-            flex: 1;
-            min-width: 280px;
-            max-width: 360px;
-            transition: all 0.25s ease;
-            border: 1px solid rgba(44, 125, 160, 0.2);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 28px 40px -14px rgba(0, 30, 60, 0.2);
-            border-color: #2C7DA0;
-        }
-
-        .card-icon {
-            font-size: 3rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .card h2 {
-            font-size: 1.85rem;
-            font-weight: 700;
-            background: linear-gradient(120deg, #0F2C39, #1D5B79);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 0.75rem;
-        }
-
-        .card-description {
-            color: #1e2a3a;
-            font-size: 0.97rem;
-            margin-bottom: 1rem;
-            line-height: 1.5;
-            background: #F8FAFE;
-            padding: 0.6rem 0.8rem;
-            border-radius: 1rem;
-        }
-
-        .card-abilities {
-            background: #F1F5F9;
-            padding: 0.8rem 1rem;
-            border-radius: 1.2rem;
-            margin: 0.5rem 0 1.2rem;
-            font-size: 0.88rem;
-        }
-
-        .card-abilities strong {
-            color: #1E5A7A;
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-        }
-
-        .card-abilities ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .card-abilities li {
-            padding: 0.25rem 0 0.25rem 1.4rem;
-            position: relative;
-        }
-
-        .card-abilities li::before {
-            content: "⚡";
-            color: #1D5B79;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .card-link {
-            margin-top: auto;
-            display: inline-block;
-            background: #0F2C39;
-            color: white;
-            text-decoration: none;
-            padding: 0.7rem 1.2rem;
-            border-radius: 2.5rem;
-            font-weight: 500;
-            font-size: 0.85rem;
-            text-align: center;
-            transition: 0.2s;
-            border: 1px solid #1D5B79;
-        }
-
-        .card-link:hover {
-            background: #2C7DA0;
-            border-color: #2C7DA0;
-        }
-
-        /* Менің тәжірибем бөлімі */
-        .experience-section {
-            background: linear-gradient(115deg, #ffffff 0%, #F3F9FF 100%);
-            border-radius: 2rem;
-            padding: 2rem 2rem 2.2rem;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
-            margin-top: 1rem;
-            border: 1px solid #cbdde9;
-        }
-
-        .experience-section h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            margin-bottom: 1.3rem;
-            color: #0F3B4C;
-            border-left: 6px solid #2C7DA0;
-            padding-left: 1rem;
-        }
-
-        .exp-content {
-            background: #FEFEFE;
-            padding: 1.6rem;
-            border-radius: 1.5rem;
-            font-size: 1.02rem;
-            color: #0b2b33;
-            line-height: 1.65;
-            box-shadow: inset 0 1px 3px #00000008, 0 2px 6px #d9e2ec;
-        }
-
-        .exp-content p {
-            margin-bottom: 1rem;
-        }
-
-        .exp-content strong {
-            color: #1A6D8C;
-        }
-
-        .badge {
-            background: #e2f0f5;
-            padding: 0.2rem 0.6rem;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            display: inline-block;
-        }
-
-        hr {
-            margin: 1.2rem 0;
-            border: 0;
-            height: 1px;
-            background: linear-gradient(90deg, #bfd9e8, transparent);
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 2.2rem;
-            font-size: 0.75rem;
-            color: #4b6a7c;
-        }
-
-        @media (max-width: 700px) {
-            .card h2 {
-                font-size: 1.6rem;
-            }
-            .header h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
-<div class="container">
-    <div class="header">
-        <h1>🧠 Әзірлеушіге арналған ЖИ-құралдары</h1>
-        <p>Кодтауды, тестілеуді және жобалауды жеделдететін AI ассистенттер</p>
+    <div class="container">
+        <!-- Батырмалар жолағы -->
+        <div class="action-bar">
+            <button id="themeToggleBtn" class="btn-theme" aria-label="Қараңғы/ашық тақырып">🌙 Қараңғы тақырып</button>
+            <div class="counter-section">
+                <span class="counter-label">📊 ЖИ-ге жіберілген сұраныстар:</span>
+                <span id="requestCounter" class="counter-value">0</span>
+                <button id="sendRequestBtn" class="btn-send">🚀 Жіберу</button>
+            </div>
+        </div>
+
+        <div class="header">
+            <h1>🧠 Әзірлеушіге арналған ЖИ-құралдары</h1>
+            <p>Кодтауды, тестілеуді және жобалауды жеделдететін AI ассистенттер</p>
+        </div>
+
+        <!-- Карточкалар гриды (анимациялы карточкалар) -->
+        <div class="cards-grid">
+            <!-- 1. Tabnine карточкасы -->
+            <div class="card animate-on-scroll">
+                <div class="card-icon">🧩</div>
+                <h2>Tabnine</h2>
+                <div class="card-description">
+                    Tabnine — бүкіл командаға арналған AI код ассистенті. Ол жеке код базаңызға үйреніп, контекстке байланысты толық функциялар мен жолдарды ұсынады.
+                </div>
+                <div class="card-abilities">
+                    <strong>✨ НЕ ІСТЕЙ АЛАДЫ:</strong>
+                    <ul>
+                        <li>Барлық танымал IDE-лерде (VS Code, IntelliJ, PyCharm) толық жолдарды болжайды</li>
+                        <li>Жеке немесе ұжымдық код стиліне бейімделеді (fine-tuning опциясы)</li>
+                        <li>20+ тілді қолдайды, жеке серверде жұмыс істеу мүмкіндігі</li>
+                        <li>Қауіпсіздік пен жеке кодты қорғауды қамтамасыз етеді</li>
+                    </ul>
+                </div>
+                <a class="card-link" href="https://www.tabnine.com/" target="_blank" rel="noopener noreferrer">🔗 Ресми сайт → tabnine.com</a>
+            </div>
+
+            <!-- 2. Amazon CodeWhisperer карточкасы -->
+            <div class="card animate-on-scroll">
+                <div class="card-icon">☁️</div>
+                <h2>Amazon CodeWhisperer</h2>
+                <div class="card-description">
+                    Amazon CodeWhisperer — AWS-тің тегін AI кодтау көмекшісі. Ол нақты уақытта код ұсынып, қауіпсіздік аудитін жүргізеді және AWS қызметтерімен терең интеграцияланады.
+                </div>
+                <div class="card-abilities">
+                    <strong>🚀 НЕ ІСТЕЙ АЛАДЫ:</strong>
+                    <ul>
+                        <li>Python, Java, JavaScript, TypeScript, C# және т.б. тілдерде код ұсынады</li>
+                        <li>Security сканері: уязвимостьтерді тауып, түзету жолдарын көрсетеді</li>
+                        <li>AWS Lambda, S3, EC2 сияқты сервистерге арналған шаблондар мен кітапханалар</li>
+                        <li>Жеке пайдаланушыларға тегін, корпоративтік опциялар</li>
+                    </ul>
+                </div>
+                <a class="card-link" href="https://aws.amazon.com/codewhisperer/" target="_blank" rel="noopener noreferrer">🔗 Ресми сайт → aws.amazon.com/codewhisperer</a>
+            </div>
+
+            <!-- 3. Replit Ghostwriter карточкасы -->
+            <div class="card animate-on-scroll">
+                <div class="card-icon">👻</div>
+                <h2>Replit Ghostwriter</h2>
+                <div class="card-description">
+                    Replit Ghostwriter — браузерлік IDE-ге біріктірілген AI жұптық бағдарламашы. Кодты түсіндіріп, қателерді түзетуге көмектеседі және тіпті бүкіл функцияларды генерациялайды.
+                </div>
+                <div class="card-abilities">
+                    <strong>✨ НЕ ІСТЕЙ АЛАДЫ:</strong>
+                    <ul>
+                        <li>Кодты автоматты түрде аяқтау және функцияларды жасау</li>
+                        <li>«Түсіндіріңіз» режимі – күрделі код блоктарын ағылшын тілінде түсіндіреді</li>
+                        <li>Қателерді талдап, түзету ұсыныстарын береді</li>
+                        <li>Бірлескен жобаларда нақты уақытта AI көмекші ретінде жұмыс істейді</li>
+                    </ul>
+                </div>
+                <a class="card-link" href="https://replit.com/site/ghostwriter" target="_blank" rel="noopener noreferrer">🔗 Ресми сайт → replit.com/ghostwriter</a>
+            </div>
+        </div>
+
+        <!-- Менің тәжірибем бөлімі -->
+        <div class="experience-section animate-on-scroll">
+            <h3>📘 Менің тәжірибем</h3>
+            <div class="exp-content">
+                <p><span class="badge">💡 Қолданып көрген құрал: <strong>Amazon CodeWhisperer</strong></span></p>
+                <p>Мен бірнеше ай бойы <strong>Amazon CodeWhisperer</strong> көмекшісін VS Code ортасында сынап көрдім. Негізінен Python және TypeScript жобаларында қолдандым. Ең қатты әсер еткені – <strong>нақты уақыттағы қауіпсіздік кеңестері</strong>. Мысалы, Django орнына шифрлау кітапханасын дұрыс пайдаланбаған кезде CodeWhisperer ескерту көрсетіп, түзету нұсқасын ұсынды.</p>
+                <p>Сонымен қатар, <strong>AWS Lambda функцияларын жазу кезінде IAM рөлдері мен boto3 әдістерін дәл болжап, уақытымды 30%-ға үнемдеді</strong>. Кейде ұсыныстар тым қысқа болып қалатын, бірақ жалпы CodeWhisperer бастапқы кодты тез жазуға және қауіпсіздік олқылықтарын азайтуға өте пайдалы.</p>
+                <hr>
+                <p>🔎 <strong>Қорытынды:</strong> ЖИ-құралдары күнделікті тасктарды жеңілдетіп, boilerplate кодты жазуды азайтады, бірақ әрқашан адамның бақылауы қажет. Менің сүйіктім – Amazon CodeWhisperer, себебі қауіпсіздік пен AWS интеграциясы маған кәсіби тұрғыдан көп көмектесті.</p>
+            </div>
+        </div>
+
+        <footer>
+            ⚙️ Барлық ЖИ-құралдар әзірлеушілерге арналған. Сілтемелер ресми сайттарға бағыттайды.
+        </footer>
     </div>
-
-    <!-- Карточкалар: Tabnine, Amazon CodeWhisperer, Replit Ghostwriter (GitHub Copilot, ChatGPT, Claude емес) -->
-    <div class="cards-grid">
-        
-        <!-- 1. Tabnine карточкасы -->
-        <div class="card">
-            <div class="card-icon">🧩</div>
-            <h2>Tabnine</h2>
-            <div class="card-description">
-                Tabnine — бүкіл командаға арналған AI код ассистенті. Ол жеке код базаңызға үйреніп, контекстке байланысты толық функциялар мен жолдарды ұсынады.
-            </div>
-            <div class="card-abilities">
-                <strong>✨ НЕ ІСТЕЙ АЛАДЫ:</strong>
-                <ul>
-                    <li>Барлық танымал IDE-лерде (VS Code, IntelliJ, PyCharm) толық жолдарды болжайды</li>
-                    <li>Жеке немесе ұжымдық код стиліне бейімделеді (fine-tuning опциясы)</li>
-                    <li>20+ тілді қолдайды, жеке серверде жұмыс істеу мүмкіндігі</li>
-                    <li>Қауіпсіздік пен жеке кодты қорғауды қамтамасыз етеді</li>
-                </ul>
-            </div>
-            <a class="card-link" href="https://www.tabnine.com/" target="_blank" rel="noopener noreferrer">🔗 Ресми сайт → tabnine.com</a>
-        </div>
-
-        <!-- 2. Amazon CodeWhisperer карточкасы -->
-        <div class="card">
-            <div class="card-icon">☁️</div>
-            <h2>Amazon CodeWhisperer</h2>
-            <div class="card-description">
-                Amazon CodeWhisperer — AWS-тің тегін AI кодтау көмекшісі. Ол нақты уақытта код ұсынып, қауіпсіздік аудитін жүргізеді және AWS қызметтерімен терең интеграцияланады.
-            </div>
-            <div class="card-abilities">
-                <strong>🚀 НЕ ІСТЕЙ АЛАДЫ:</strong>
-                <ul>
-                    <li>Python, Java, JavaScript, TypeScript, C# және т.б. тілдерде код ұсынады</li>
-                    <li>Security сканері: уязвимостьтерді тауып, түзету жолдарын көрсетеді</li>
-                    <li>AWS Lambda, S3, EC2 сияқты сервистерге арналған шаблондар мен кітапханалар</li>
-                    <li>Жеке пайдаланушыларға тегін, корпоративтік опциялар</li>
-                </ul>
-            </div>
-            <a class="card-link" href="https://aws.amazon.com/codewhisperer/" target="_blank" rel="noopener noreferrer">🔗 Ресми сайт → aws.amazon.com/codewhisperer</a>
-        </div>
-
-        <!-- 3. Replit Ghostwriter карточкасы -->
-        <div class="card">
-            <div class="card-icon">👻</div>
-            <h2>Replit Ghostwriter</h2>
-            <div class="card-description">
-                Replit Ghostwriter — браузерлік IDE-ге біріктірілген AI жұптық бағдарламашы. Кодты түсіндіріп, қателерді түзетуге көмектеседі және тіпті бүкіл функцияларды генерациялайды.
-            </div>
-            <div class="card-abilities">
-                <strong>✨ НЕ ІСТЕЙ АЛАДЫ:</strong>
-                <ul>
-                    <li>Кодты автоматты түрде аяқтау және функцияларды жасау</li>
-                    <li>«Түсіндіріңіз» режимі – күрделі код блоктарын ағылшын тілінде түсіндіреді</li>
-                    <li>Қателерді талдап, түзету ұсыныстарын береді</li>
-                    <li>Бірлескен жобаларда нақты уақытта AI көмекші ретінде жұмыс істейді</li>
-                </ul>
-            </div>
-            <a class="card-link" href="https://replit.com/site/ghostwriter" target="_blank" rel="noopener noreferrer">🔗 Ресми сайт → replit.com/ghostwriter</a>
-        </div>
-    </div>
-
-    <!-- Менің тәжірибем бөлімі (бір құралды қолданып көргенімді сипаттаймын) -->
-    <div class="experience-section">
-        <h3>📘 Менің тәжірибем</h3>
-        <div class="exp-content">
-            <p><span class="badge">💡 Қолданып көрген құрал: <strong>Amazon CodeWhisperer</strong></span></p>
-            <p>Мен бірнеше ай бойы <strong>Amazon CodeWhisperer</strong> көмекшісін VS Code ортасында сынап көрдім. Негізінен Python және TypeScript жобаларында қолдандым. Ең қатты әсер еткені – <strong>нақты уақыттағы қауіпсіздік кеңестері</strong>. Мысалы, Django орнына шифрлау кітапханасын дұрыс пайдаланбаған кезде CodeWhisperer ескерту көрсетіп, түзету нұсқасын ұсынды.</p>
-            <p>Сонымен қатар, <strong>AWS Lambda функцияларын жазу кезінде IAM рөлдері мен boto3 әдістерін дәл болжап, уақытымды 30%-ға үнемдеді</strong>. Кейде ұсыныстар тым қысқа болып қалатын, бірақ жалпы CodeWhisperer бастапқы кодты тез жазуға және қауіпсіздік олқылықтарын азайтуға өте пайдалы.</p>
-            <p>Сонымен қатар, <strong>Tabnine</strong> плагинін де қысқаша сынап көрдім – әсіресе үлкен жеке код базасында оның контекстік болжамдары таңқалдырды. Бірақ CodeWhisperer-дің AWS-пен терең байланысы мен security фичалары маған жақынырақ. Жақын арада Replit Ghostwriter-мен де тәжірибе жасауды жоспарлап отырмын, әсіресе стартап хаккатондарына арналған.</p>
-            <hr>
-            <p>🔎 <strong>Қорытынды:</strong> ЖИ-құралдары күнделікті тасктарды жеңілдетіп, boilerplate кодты жазуды азайтады, бірақ әрқашан адамның бақылауы қажет. Менің сүйіктім – Amazon CodeWhisperer, себебі қауіпсіздік пен AWS интеграциясы маған кәсіби тұрғыдан көп көмектесті.</p>
-        </div>
-    </div>
-    <footer>
-        ⚙️ Барлық ЖИ-құралдар әзірлеушілерге арналған. Сілтемелер ресми сайттарға бағыттайды.
-    </footer>
-</div>
 </body>
 </html>
