@@ -22,83 +22,103 @@
 
         <div class="header">
             <h1>🧠 Әзірлеушіге арналған ЖИ-құралдары</h1>
-            <p>Кодтауды, тестілеуді және жобалауды жеделдететін AI ассистенттер</p>
+            <p>Төмендегі карточкаларды басыңыз — толық ақпарат ашылады</p>
         </div>
 
-        <!-- Карточкалар гриды (анимациялы карточкалар) -->
+        <!-- Карточкалар гриды -->
         <div class="cards-grid">
             <!-- 1. Tabnine карточкасы -->
-            <div class="card animate-on-scroll">
-                <div class="card-icon">🧩</div>
-                <h2>Tabnine</h2>
-                <div class="card-description">
-                    Tabnine — бүкіл командаға арналған AI код ассистенті. Ол жеке код базаңызға үйреніп, контекстке байланысты толық функциялар мен жолдарды ұсынады.
+            <div class="card" data-card="tabnine">
+                <div class="card-header">
+                    <div class="card-icon">🧩</div>
+                    <h2>Tabnine</h2>
+                    <button class="card-toggle-btn" aria-label="Ашу/жабу">▼</button>
                 </div>
-                <div class="card-abilities">
-                    <strong>✨ НЕ ІСТЕЙ АЛАДЫ:</strong>
-                    <ul>
-                        <li>Барлық танымал IDE-лерде (VS Code, IntelliJ, PyCharm) толық жолдарды болжайды</li>
-                        <li>Жеке немесе ұжымдық код стиліне бейімделеді (fine-tuning опциясы)</li>
-                        <li>20+ тілді қолдайды, жеке серверде жұмыс істеу мүмкіндігі</li>
-                        <li>Қауіпсіздік пен жеке кодты қорғауды қамтамасыз етеді</li>
-                    </ul>
+                <div class="card-details">
+                    <div class="card-description">
+                        Tabnine — бүкіл командаға арналған AI код ассистенті. Ол жеке код базаңызға үйреніп, контекстке байланысты толық функциялар мен жолдарды ұсынады.
+                    </div>
+                    <div class="card-abilities">
+                        <strong>✨ НЕ ІСТЕЙ АЛАДЫ:</strong>
+                        <ul>
+                            <li>Барлық танымал IDE-лерде (VS Code, IntelliJ, PyCharm) толық жолдарды болжайды</li>
+                            <li>Жеке немесе ұжымдық код стиліне бейімделеді (fine-tuning опциясы)</li>
+                            <li>20+ тілді қолдайды, жеке серверде жұмыс істеу мүмкіндігі</li>
+                            <li>Қауіпсіздік пен жеке кодты қорғауды қамтамасыз етеді</li>
+                        </ul>
+                    </div>
+                    <a class="card-link" href="https://www.tabnine.com/" target="_blank" rel="noopener noreferrer">🔗 Ресми сайт → tabnine.com</a>
                 </div>
-                <a class="card-link" href="https://www.tabnine.com/" target="_blank" rel="noopener noreferrer">🔗 Ресми сайт → tabnine.com</a>
             </div>
 
             <!-- 2. Amazon CodeWhisperer карточкасы -->
-            <div class="card animate-on-scroll">
-                <div class="card-icon">☁️</div>
-                <h2>Amazon CodeWhisperer</h2>
-                <div class="card-description">
-                    Amazon CodeWhisperer — AWS-тің тегін AI кодтау көмекшісі. Ол нақты уақытта код ұсынып, қауіпсіздік аудитін жүргізеді және AWS қызметтерімен терең интеграцияланады.
+            <div class="card" data-card="codewhisperer">
+                <div class="card-header">
+                    <div class="card-icon">☁️</div>
+                    <h2>Amazon CodeWhisperer</h2>
+                    <button class="card-toggle-btn" aria-label="Ашу/жабу">▼</button>
                 </div>
-                <div class="card-abilities">
-                    <strong>🚀 НЕ ІСТЕЙ АЛАДЫ:</strong>
-                    <ul>
-                        <li>Python, Java, JavaScript, TypeScript, C# және т.б. тілдерде код ұсынады</li>
-                        <li>Security сканері: уязвимостьтерді тауып, түзету жолдарын көрсетеді</li>
-                        <li>AWS Lambda, S3, EC2 сияқты сервистерге арналған шаблондар мен кітапханалар</li>
-                        <li>Жеке пайдаланушыларға тегін, корпоративтік опциялар</li>
-                    </ul>
+                <div class="card-details">
+                    <div class="card-description">
+                        Amazon CodeWhisperer — AWS-тің тегін AI кодтау көмекшісі. Ол нақты уақытта код ұсынып, қауіпсіздік аудитін жүргізеді және AWS қызметтерімен терең интеграцияланады.
+                    </div>
+                    <div class="card-abilities">
+                        <strong>🚀 НЕ ІСТЕЙ АЛАДЫ:</strong>
+                        <ul>
+                            <li>Python, Java, JavaScript, TypeScript, C# және т.б. тілдерде код ұсынады</li>
+                            <li>Security сканері: уязвимостьтерді тауып, түзету жолдарын көрсетеді</li>
+                            <li>AWS Lambda, S3, EC2 сияқты сервистерге арналған шаблондар мен кітапханалар</li>
+                            <li>Жеке пайдаланушыларға тегін, корпоративтік опциялар</li>
+                        </ul>
+                    </div>
+                    <a class="card-link" href="https://aws.amazon.com/codewhisperer/" target="_blank" rel="noopener noreferrer">🔗 Ресми сайт → aws.amazon.com/codewhisperer</a>
                 </div>
-                <a class="card-link" href="https://aws.amazon.com/codewhisperer/" target="_blank" rel="noopener noreferrer">🔗 Ресми сайт → aws.amazon.com/codewhisperer</a>
             </div>
 
             <!-- 3. Replit Ghostwriter карточкасы -->
-            <div class="card animate-on-scroll">
-                <div class="card-icon">👻</div>
-                <h2>Replit Ghostwriter</h2>
-                <div class="card-description">
-                    Replit Ghostwriter — браузерлік IDE-ге біріктірілген AI жұптық бағдарламашы. Кодты түсіндіріп, қателерді түзетуге көмектеседі және тіпті бүкіл функцияларды генерациялайды.
+            <div class="card" data-card="ghostwriter">
+                <div class="card-header">
+                    <div class="card-icon">👻</div>
+                    <h2>Replit Ghostwriter</h2>
+                    <button class="card-toggle-btn" aria-label="Ашу/жабу">▼</button>
                 </div>
-                <div class="card-abilities">
-                    <strong>✨ НЕ ІСТЕЙ АЛАДЫ:</strong>
-                    <ul>
-                        <li>Кодты автоматты түрде аяқтау және функцияларды жасау</li>
-                        <li>«Түсіндіріңіз» режимі – күрделі код блоктарын ағылшын тілінде түсіндіреді</li>
-                        <li>Қателерді талдап, түзету ұсыныстарын береді</li>
-                        <li>Бірлескен жобаларда нақты уақытта AI көмекші ретінде жұмыс істейді</li>
-                    </ul>
+                <div class="card-details">
+                    <div class="card-description">
+                        Replit Ghostwriter — браузерлік IDE-ге біріктірілген AI жұптық бағдарламашы. Кодты түсіндіріп, қателерді түзетуге көмектеседі және тіпті бүкіл функцияларды генерациялайды.
+                    </div>
+                    <div class="card-abilities">
+                        <strong>✨ НЕ ІСТЕЙ АЛАДЫ:</strong>
+                        <ul>
+                            <li>Кодты автоматты түрде аяқтау және функцияларды жасау</li>
+                            <li>«Түсіндіріңіз» режимі – күрделі код блоктарын ағылшын тілінде түсіндіреді</li>
+                            <li>Қателерді талдап, түзету ұсыныстарын береді</li>
+                            <li>Бірлескен жобаларда нақты уақытта AI көмекші ретінде жұмыс істейді</li>
+                        </ul>
+                    </div>
+                    <a class="card-link" href="https://replit.com/site/ghostwriter" target="_blank" rel="noopener noreferrer">🔗 Ресми сайт → replit.com/ghostwriter</a>
                 </div>
-                <a class="card-link" href="https://replit.com/site/ghostwriter" target="_blank" rel="noopener noreferrer">🔗 Ресми сайт → replit.com/ghostwriter</a>
             </div>
         </div>
 
-        <!-- Менің тәжірибем бөлімі -->
-        <div class="experience-section animate-on-scroll">
-            <h3>📘 Менің тәжірибем</h3>
-            <div class="exp-content">
-                <p><span class="badge">💡 Қолданып көрген құрал: <strong>Amazon CodeWhisperer</strong></span></p>
-                <p>Мен бірнеше ай бойы <strong>Amazon CodeWhisperer</strong> көмекшісін VS Code ортасында сынап көрдім. Негізінен Python және TypeScript жобаларында қолдандым. Ең қатты әсер еткені – <strong>нақты уақыттағы қауіпсіздік кеңестері</strong>. Мысалы, Django орнына шифрлау кітапханасын дұрыс пайдаланбаған кезде CodeWhisperer ескерту көрсетіп, түзету нұсқасын ұсынды.</p>
-                <p>Сонымен қатар, <strong>AWS Lambda функцияларын жазу кезінде IAM рөлдері мен boto3 әдістерін дәл болжап, уақытымды 30%-ға үнемдеді</strong>. Кейде ұсыныстар тым қысқа болып қалатын, бірақ жалпы CodeWhisperer бастапқы кодты тез жазуға және қауіпсіздік олқылықтарын азайтуға өте пайдалы.</p>
-                <hr>
-                <p>🔎 <strong>Қорытынды:</strong> ЖИ-құралдары күнделікті тасктарды жеңілдетіп, boilerplate кодты жазуды азайтады, бірақ әрқашан адамның бақылауы қажет. Менің сүйіктім – Amazon CodeWhisperer, себебі қауіпсіздік пен AWS интеграциясы маған кәсіби тұрғыдан көп көмектесті.</p>
+        <!-- Менің тәжірибем бөлімі (басында тек атауы ғана) -->
+        <div class="experience-section" data-exp="experience">
+            <div class="exp-header" id="expHeader">
+                <h3>📘 Менің тәжірибем</h3>
+                <button class="exp-toggle-btn" aria-label="Ашу/жабу">▼</button>
+            </div>
+            <div class="exp-details">
+                <div class="exp-content">
+                    <p><span class="badge">💡 Қолданып көрген құрал: <strong>Amazon CodeWhisperer</strong></span></p>
+                    <p>Мен бірнеше ай бойы <strong>Amazon CodeWhisperer</strong> көмекшісін VS Code ортасында сынап көрдім. Негізінен Python және TypeScript жобаларында қолдандым. Ең қатты әсер еткені – <strong>нақты уақыттағы қауіпсіздік кеңестері</strong>. Мысалы, Django орнына шифрлау кітапханасын дұрыс пайдаланбаған кезде CodeWhisperer ескерту көрсетіп, түзету нұсқасын ұсынды.</p>
+                    <p>Сонымен қатар, <strong>AWS Lambda функцияларын жазу кезінде IAM рөлдері мен boto3 әдістерін дәл болжап, уақытымды 30%-ға үнемдеді</strong>. Кейде ұсыныстар тым қысқа болып қалатын, бірақ жалпы CodeWhisperer бастапқы кодты тез жазуға және қауіпсіздік олқылықтарын азайтуға өте пайдалы.</p>
+                    <hr>
+                    <p>🔎 <strong>Қорытынды:</strong> ЖИ-құралдары күнделікті тасктарды жеңілдетіп, boilerplate кодты жазуды азайтады, бірақ әрқашан адамның бақылауы қажет. Менің сүйіктім – Amazon CodeWhisperer, себебі қауіпсіздік пен AWS интеграциясы маған кәсіби тұрғыдан көп көмектесті.</p>
+                </div>
             </div>
         </div>
 
         <footer>
-            ⚙️ Барлық ЖИ-құралдар әзірлеушілерге арналған. Сілтемелер ресми сайттарға бағыттайды.
+            ⚙️ Барлық ЖИ-құралдар әзірлеушілерге арналған. Карточкаларды басыңыз — толық ақпарат ашылады.
         </footer>
     </div>
 </body>
