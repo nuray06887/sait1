@@ -1,32 +1,42 @@
-/* ===== CSS АЙНЫМАЛЫЛАРЫ (АШЫҚ ТАҚЫРЫП) ===== */
+/* ===== ROOT АЙНЫМАЛЫЛАРЫ (АШЫҚ ТАҚЫРЫП) ===== */
 :root {
-    --bg-light: #fefcf5;
-    --bg-gradient: radial-gradient(circle at 10% 20%, rgba(255,248,225,0.4) 0%, rgba(238,245,255,0.6) 100%);
-    --surface: #ffffff;
-    --text-main: #1a1e2b;
-    --text-soft: #4a5568;
-    --accent: #5b6cff;
-    --accent-glow: rgba(91,108,255,0.2);
-    --border-light: rgba(0,0,0,0.05);
-    --shadow-sm: 0 8px 20px rgba(0,0,0,0.03), 0 2px 4px rgba(0,0,0,0.02);
-    --shadow-md: 0 20px 35px -12px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.02);
-    --shadow-hover: 0 30px 45px -15px rgba(0,0,0,0.12), 0 0 0 1px rgba(91,108,255,0.1);
-    --card-radius: 2rem;
-    --transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #fef3c7 100%);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --accent: #3b82f6;
+    --accent-dark: #2563eb;
+    --accent-glow: rgba(59, 130, 246, 0.15);
+    --border: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+    --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.05), 0 10px 10px -5px rgba(0,0,0,0.01);
+    --shadow-hover: 0 25px 35px -12px rgba(0,0,0,0.15);
+    --radius-sm: 0.75rem;
+    --radius-md: 1rem;
+    --radius-lg: 1.5rem;
+    --radius-xl: 2rem;
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ===== ҚАРАҢҒЫ ТАҚЫРЫП ===== */
 body.dark-theme {
-    --bg-light: #0d1117;
-    --bg-gradient: radial-gradient(circle at 30% 10%, #161b22 0%, #0a0c10 100%);
-    --surface: #161b22;
-    --text-main: #eef2ff;
-    --text-soft: #9ca3af;
-    --accent: #8b9eff;
-    --accent-glow: rgba(139,158,255,0.15);
-    --border-light: rgba(255,255,255,0.05);
-    --shadow-sm: 0 8px 20px rgba(0,0,0,0.4);
-    --shadow-md: 0 20px 35px -12px rgba(0,0,0,0.5);
-    --shadow-hover: 0 30px 45px -15px rgba(0,0,0,0.6), 0 0 0 1px rgba(139,158,255,0.2);
+    --bg-primary: #0f1117;
+    --bg-secondary: #1a1d2b;
+    --bg-gradient: linear-gradient(135deg, #0f1117 0%, #1a1d2b 100%);
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --accent: #60a5fa;
+    --accent-dark: #3b82f6;
+    --accent-glow: rgba(96, 165, 250, 0.1);
+    --border: #2d3748;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.3);
+    --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.4);
+    --shadow-hover: 0 25px 35px -12px rgba(0,0,0,0.5);
 }
 
 * {
@@ -36,111 +46,107 @@ body.dark-theme {
 }
 
 body {
-    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
-    background: var(--bg-light);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg-primary);
     background-image: var(--bg-gradient);
-    color: var(--text-main);
-    line-height: 1.5;
+    color: var(--text-primary);
+    line-height: 1.6;
     padding: 2rem 1.5rem;
-    transition: background 0.3s ease, color 0.2s ease;
+    transition: var(--transition);
+    min-height: 100vh;
 }
 
 .container {
-    max-width: 1300px;
+    max-width: 1280px;
     margin: 0 auto;
 }
 
-/* ===== БАТЫРМАЛАР ЖОЛАҒЫ ===== */
+/* ===== ӘРЕКЕТ ПАНЕЛІ ===== */
 .action-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-bottom: 3rem;
-    padding: 0.8rem 1.5rem;
-    background: var(--surface);
-    border-radius: 3rem;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--border-light);
-    backdrop-filter: blur(2px);
+    margin-bottom: 2.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
 }
 
 .btn-theme {
     background: var(--accent);
     color: white;
     border: none;
-    padding: 0.6rem 1.4rem;
-    border-radius: 2.5rem;
+    padding: 0.6rem 1.3rem;
+    border-radius: var(--radius-xl);
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     cursor: pointer;
     transition: var(--transition);
-    letter-spacing: -0.2px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .btn-theme:hover {
-    background: #4a5ce0;
+    background: var(--accent-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px var(--accent-glow);
+    box-shadow: 0 5px 15px var(--accent-glow);
 }
 
 .counter-section {
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: rgba(0,0,0,0.02);
+    background: var(--bg-primary);
     padding: 0.4rem 1.2rem;
-    border-radius: 2.5rem;
-    backdrop-filter: blur(4px);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border);
 }
 
 .counter-label {
+    font-size: 0.8rem;
     font-weight: 500;
-    font-size: 0.85rem;
-    letter-spacing: -0.2px;
-    color: var(--text-soft);
+    color: var(--text-secondary);
 }
 
 .counter-value {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--accent);
-    min-width: 2.8rem;
+    min-width: 2.5rem;
     text-align: center;
     line-height: 1;
 }
 
 .btn-send {
-    background: #2dd4bf;
-    color: #0f172a;
+    background: var(--accent);
+    color: white;
     border: none;
-    padding: 0.5rem 1.2rem;
-    border-radius: 2rem;
-    font-weight: 600;
-    font-size: 0.85rem;
+    padding: 0.45rem 1.1rem;
+    border-radius: var(--radius-xl);
+    font-weight: 500;
+    font-size: 0.8rem;
     cursor: pointer;
     transition: var(--transition);
 }
 
 .btn-send:hover {
-    background: #14b8a6;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(45,212,191,0.3);
+    background: var(--accent-dark);
+    transform: translateY(-1px);
 }
 
 /* ===== БАСТЫ ТАҚЫРЫП ===== */
 .header {
     text-align: center;
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
 }
 
 .header h1 {
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: 2.8rem;
+    font-weight: 800;
     letter-spacing: -0.02em;
-    background: linear-gradient(135deg, var(--text-main) 0%, var(--accent) 80%);
+    background: linear-gradient(135deg, var(--text-primary), var(--accent));
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -148,32 +154,31 @@ body {
 }
 
 .header p {
-    font-size: 1rem;
-    color: var(--text-soft);
-    max-width: 500px;
-    margin: 0 auto;
-    border-bottom: 1px dashed var(--border-light);
-    display: inline-block;
-    padding-bottom: 0.4rem;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
 }
 
-/* ===== КАРТОЧКАЛАР ГРИДЫ ===== */
+/* ===== КАРТОЧКАЛАР ===== */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-bottom: 4rem;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
 }
 
-/* Карточка – шыны стилі */
 .card {
-    background: var(--surface);
-    border-radius: var(--card-radius);
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border-light);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
     overflow: hidden;
     transition: var(--transition);
-    backdrop-filter: blur(2px);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .card:hover {
@@ -184,90 +189,67 @@ body {
 .card-header {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    gap: 0.75rem;
+    padding: 1.25rem 1.25rem 0.75rem 1.25rem;
     cursor: pointer;
-    background: var(--surface);
-    transition: background 0.2s;
-}
-
-.card-header:hover {
-    background: rgba(91,108,255,0.03);
 }
 
 .card-icon {
-    font-size: 2.6rem;
-    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+    font-size: 2.2rem;
 }
 
 .card-header h2 {
-    font-size: 1.6rem;
-    font-weight: 600;
-    letter-spacing: -0.3px;
-    background: linear-gradient(120deg, var(--text-main), var(--accent));
+    font-size: 1.4rem;
+    font-weight: 700;
+    flex: 1;
+    background: linear-gradient(135deg, var(--text-primary), var(--accent));
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    flex: 1;
-    margin: 0;
 }
 
 .card-toggle-btn {
     background: none;
     border: none;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     cursor: pointer;
-    color: var(--accent);
+    color: var(--text-muted);
     transition: transform 0.3s ease;
-    padding: 0.3rem;
-    opacity: 0.7;
-}
-
-.card-toggle-btn:hover {
-    opacity: 1;
-}
-
-.card-details {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.45s cubic-bezier(0.33, 1, 0.68, 1);
-    padding: 0 1.5rem;
-}
-
-.card.open .card-details {
-    max-height: 520px;
-    padding: 0 1.5rem 1.5rem 1.5rem;
 }
 
 .card.open .card-toggle-btn {
     transform: rotate(180deg);
 }
 
-.card-description {
-    font-size: 0.95rem;
-    color: var(--text-soft);
-    background: rgba(91,108,255,0.03);
-    padding: 1rem;
-    border-radius: 1.2rem;
-    margin-bottom: 1.2rem;
-    line-height: 1.5;
-    border-left: 3px solid var(--accent);
+.card-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    padding: 0 1.25rem;
 }
 
-.card-abilities {
-    background: rgba(0,0,0,0.02);
-    padding: 1rem;
-    border-radius: 1.2rem;
-    margin-bottom: 1.2rem;
+.card.open .card-details {
+    max-height: 400px;
+    padding: 0 1.25rem 1.25rem 1.25rem;
+}
+
+.card-description {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    background: var(--bg-primary);
+    padding: 0.85rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--accent);
 }
 
 .card-abilities strong {
     color: var(--accent);
-    display: block;
-    margin-bottom: 0.6rem;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 .card-abilities ul {
@@ -276,10 +258,10 @@ body {
 }
 
 .card-abilities li {
-    padding: 0.3rem 0 0.3rem 1.6rem;
+    padding: 0.25rem 0 0.25rem 1.3rem;
     position: relative;
-    font-size: 0.85rem;
-    color: var(--text-soft);
+    font-size: 0.8rem;
+    color: var(--text-muted);
 }
 
 .card-abilities li::before {
@@ -287,7 +269,6 @@ body {
     color: var(--accent);
     position: absolute;
     left: 0;
-    font-size: 0.9rem;
 }
 
 .card-link {
@@ -297,125 +278,316 @@ body {
     background: var(--accent);
     color: white;
     text-decoration: none;
-    padding: 0.5rem 1.2rem;
-    border-radius: 2rem;
+    padding: 0.45rem 1rem;
+    border-radius: var(--radius-xl);
+    font-size: 0.75rem;
     font-weight: 500;
-    font-size: 0.8rem;
     transition: var(--transition);
-    border: none;
+    margin-top: 0.5rem;
 }
 
 .card-link:hover {
-    background: #4a5ce0;
+    background: var(--accent-dark);
     transform: translateX(3px);
-    box-shadow: 0 4px 10px var(--accent-glow);
+}
+
+/* ===== CHAT БӨЛІМІ (DeepSeek + Ollama) ===== */
+.chat-section {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.chat-header {
+    padding: 1.2rem 1.5rem;
+    background: linear-gradient(135deg, var(--accent-glow) 0%, transparent 100%);
+    border-bottom: 1px solid var(--border);
+}
+
+.chat-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.25rem;
+}
+
+.chat-title h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.model-badge {
+    background: var(--accent);
+    color: white;
+    padding: 0.2rem 0.7rem;
+    border-radius: var(--radius-xl);
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.chat-header p {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.chat-messages {
+    height: 380px;
+    overflow-y: auto;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.message {
+    display: flex;
+    gap: 0.75rem;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.message.user {
+    flex-direction: row-reverse;
+}
+
+.message-avatar {
+    width: 34px;
+    height: 34px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.message.user .message-avatar {
+    background: #10b981;
+}
+
+.message-content {
+    max-width: 75%;
+    padding: 0.7rem 1rem;
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.message.user .message-content {
+    background: var(--accent);
+    color: white;
+    border: none;
+}
+
+.message-content code {
+    background: rgba(0,0,0,0.1);
+    padding: 0.1rem 0.3rem;
+    border-radius: 0.3rem;
+    font-family: monospace;
+    font-size: 0.8rem;
+}
+
+.message-content pre {
+    background: rgba(0,0,0,0.08);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+}
+
+.setup-hint {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    display: block;
+    margin-top: 0.4rem;
+}
+
+.setup-hint code {
+    background: rgba(0,0,0,0.1);
+    padding: 0.1rem 0.3rem;
+    border-radius: 0.3rem;
+}
+
+.chat-input-area {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    border-top: 1px solid var(--border);
+    background: var(--bg-secondary);
+}
+
+.chat-input {
+    flex: 1;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.85rem;
+    resize: none;
+    transition: var(--transition);
+}
+
+.chat-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px var(--accent-glow);
+}
+
+.chat-send-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.3rem;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.chat-send-btn:hover {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+}
+
+.chat-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.7rem;
+    background: var(--bg-primary);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #f59e0b;
+    transition: background 0.3s ease;
+}
+
+.typing-indicator {
+    display: inline-block;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
 }
 
 /* ===== ТӘЖІРИБЕ БӨЛІМІ ===== */
 .experience-section {
-    background: var(--surface);
-    border-radius: 2rem;
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border-light);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
     overflow: hidden;
-    margin-top: 1rem;
     transition: var(--transition);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.experience-section.animate-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .exp-header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 2rem;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
     cursor: pointer;
-    background: var(--surface);
-    transition: background 0.2s;
-}
-
-.exp-header:hover {
-    background: rgba(91,108,255,0.02);
 }
 
 .exp-header h3 {
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     font-weight: 600;
-    letter-spacing: -0.3px;
-    color: var(--text-main);
-    margin: 0;
     border-left: 4px solid var(--accent);
-    padding-left: 1rem;
+    padding-left: 0.8rem;
 }
 
 .exp-toggle-btn {
     background: none;
     border: none;
-    font-size: 1.3rem;
+    font-size: 1rem;
     cursor: pointer;
-    color: var(--accent);
+    color: var(--text-muted);
     transition: transform 0.3s ease;
-    opacity: 0.7;
-}
-
-.exp-details {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.45s ease;
-    padding: 0 2rem;
-}
-
-.experience-section.open .exp-details {
-    max-height: 500px;
-    padding: 0 2rem 2rem 2rem;
 }
 
 .experience-section.open .exp-toggle-btn {
     transform: rotate(180deg);
 }
 
+.exp-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    padding: 0 1.5rem;
+}
+
+.experience-section.open .exp-details {
+    max-height: 550px;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
 .exp-content {
-    background: rgba(0,0,0,0.01);
-    padding: 1.4rem;
-    border-radius: 1.5rem;
-    font-size: 0.95rem;
-    color: var(--text-soft);
-    line-height: 1.6;
+    background: var(--bg-primary);
+    padding: 1.2rem;
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.exp-content p {
+    margin-bottom: 1rem;
+}
+
+.exp-content strong {
+    color: var(--text-primary);
 }
 
 .badge {
-    background: rgba(91,108,255,0.12);
-    padding: 0.25rem 0.75rem;
-    border-radius: 2rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--accent);
+    background: var(--accent);
+    color: white;
+    padding: 0.2rem 0.7rem;
+    border-radius: var(--radius-xl);
+    font-size: 0.7rem;
     display: inline-block;
+    margin-bottom: 0.5rem;
 }
 
 hr {
     margin: 1rem 0;
-    border: 0;
+    border: none;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
 }
 
 footer {
     text-align: center;
-    margin-top: 3rem;
-    font-size: 0.75rem;
-    color: var(--text-soft);
-    opacity: 0.7;
-}
-
-/* ===== АНИМАЦИЯ (СКРОЛЛ КЕЗІНДЕ) ===== */
-.card, .experience-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-}
-
-.card.animate-in, .experience-section.animate-in {
-    opacity: 1;
-    transform: translateY(0);
+    margin-top: 2.5rem;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -423,32 +595,41 @@ footer {
     body {
         padding: 1rem;
     }
+    
     .cards-grid {
         grid-template-columns: 1fr;
-        gap: 1.2rem;
+        gap: 1rem;
     }
+    
     .header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
+    
     .action-bar {
         flex-direction: column;
         align-items: stretch;
-        border-radius: 1.8rem;
     }
-    .card-header h2 {
-        font-size: 1.3rem;
+    
+    .counter-section {
+        justify-content: center;
     }
-    .exp-header h3 {
-        font-size: 1.3rem;
+    
+    .message-content {
+        max-width: 85%;
     }
-    .exp-header {
-        padding: 1rem;
+    
+    .chat-messages {
+        height: 320px;
+    }
+    
+    .experience-section.open .exp-details {
+        max-height: 650px;
     }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .cards-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
+        gap: 1.2rem;
     }
 }
