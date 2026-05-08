@@ -44,7 +44,7 @@ themeToggleBtn.addEventListener('click', () => {
 // ==========================================
 
 const OLLAMA_URL = 'http://localhost:11434/api/generate';
-const OLLAMA_MODEL = 'deepseek-v3.1:671b-cloud';
+const OLLAMA_MODEL = 'llama3.2:3b';
 
 // Чат элементтері
 const chatMessages = document.getElementById('chatMessages');
