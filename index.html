@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Әзірлеушіге арналған ЖИ-құралдары | AI құралдары</title>
+    <title>Әзірлеушіге арналған ЖИ-құралдары | DeepSeek AI</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
+        <!-- Әрекет панелі (тақырып ауыстыру + санауыш) -->
         <div class="action-bar">
             <button id="themeToggleBtn" class="btn-theme">🌙 Қараңғы тақырып</button>
             <div class="counter-section">
@@ -19,82 +20,122 @@
             </div>
         </div>
 
+        <!-- Басты тақырып -->
         <div class="header">
             <h1>🧠 Әзірлеушіге арналған ЖИ-құралдары</h1>
             <p>Төмендегі карточкаларды басыңыз — толық ақпарат ашылады</p>
         </div>
 
+        <!-- Карточкалар (кемінде 3 дана) -->
         <div class="cards-grid">
+            <!-- Карточка 1: GitHub Copilot -->
             <div class="card">
                 <div class="card-header">
-                    <div class="card-icon">🧩</div>
-                    <h2>Tabnine</h2>
+                    <div class="card-icon">🐙</div>
+                    <h2>GitHub Copilot</h2>
                     <button class="card-toggle-btn">▼</button>
                 </div>
                 <div class="card-details">
                     <div class="card-description">
-                        Tabnine — бүкіл командаға арналған AI код ассистенті. Ол жеке код базаңызға үйреніп, контекстке байланысты толық функциялар мен жолдарды ұсынады.
+                        GitHub Copilot — OpenAI Codex негізінде құрылған AI жұптық бағдарламашысы. 
+                        Ол нақты уақытта код ұсынып, функциялар мен тесттерді автоматты түрде жазады.
                     </div>
                     <div class="card-abilities">
                         <strong>✨ НЕ ІСТЕЙ АЛАДЫ:</strong>
                         <ul>
-                            <li>Барлық танымал IDE-лерде (VS Code, IntelliJ, PyCharm) толық жолдарды болжайды</li>
-                            <li>Жеке немесе ұжымдық код стиліне бейімделеді</li>
-                            <li>20+ тілді қолдайды, жеке серверде жұмыс істеу мүмкіндігі</li>
-                            <li>Қауіпсіздік пен жеке кодты қорғауды қамтамасыз етеді</li>
+                            <li>Кодты автоматты түрде аяқтап, функцияларды ұсынады</li>
+                            <li>VS Code, IntelliJ, Neovim және басқа IDE-лерде жұмыс істейді</li>
+                            <li>Комментарийлерден код құрастырады</li>
+                            <li>Бірнеше балама шешімдерді көрсетеді</li>
                         </ul>
                     </div>
-                    <a class="card-link" href="https://www.tabnine.com/" target="_blank">🔗 Ресми сайт → tabnine.com</a>
+                    <a class="card-link" href="https://github.com/features/copilot" target="_blank">🔗 Ресми сайт → github.com/copilot</a>
                 </div>
             </div>
 
+            <!-- Карточка 2: ChatGPT -->
             <div class="card">
                 <div class="card-header">
-                    <div class="card-icon">☁️</div>
-                    <h2>Amazon CodeWhisperer</h2>
+                    <div class="card-icon">💬</div>
+                    <h2>ChatGPT</h2>
                     <button class="card-toggle-btn">▼</button>
                 </div>
                 <div class="card-details">
                     <div class="card-description">
-                        Amazon CodeWhisperer — AWS-тің тегін AI кодтау көмекшісі. Ол нақты уақытта код ұсынып, қауіпсіздік аудитін жүргізеді.
-                    </div>
-                    <div class="card-abilities">
-                        <strong>🚀 НЕ ІСТЕЙ АЛАДЫ:</strong>
-                        <ul>
-                            <li>Python, Java, JavaScript, TypeScript, C# тілдерінде код ұсынады</li>
-                            <li>Security сканері: уязвимостьтерді тауып, түзету жолдарын көрсетеді</li>
-                            <li>AWS Lambda, S3, EC2 сервистеріне арналған шаблондар</li>
-                            <li>Жеке пайдаланушыларға тегін</li>
-                        </ul>
-                    </div>
-                    <a class="card-link" href="https://aws.amazon.com/codewhisperer/" target="_blank">🔗 Ресми сайт → aws.amazon.com/codewhisperer</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">👻</div>
-                    <h2>Replit Ghostwriter</h2>
-                    <button class="card-toggle-btn">▼</button>
-                </div>
-                <div class="card-details">
-                    <div class="card-description">
-                        Replit Ghostwriter — браузерлік IDE-ге біріктірілген AI жұптық бағдарламашы. Кодты түсіндіріп, қателерді түзетуге көмектеседі.
+                        ChatGPT — OpenAI компаниясының GPT-4 моделіне негізделген диалогтық AI көмекшісі.
+                        Код жазуға, қателерді түзетуге, құжаттама жасауға және идеяларды талқылауға көмектеседі.
                     </div>
                     <div class="card-abilities">
                         <strong>✨ НЕ ІСТЕЙ АЛАДЫ:</strong>
                         <ul>
-                            <li>Кодты автоматты түрде аяқтау және функцияларды жасау</li>
-                            <li>«Түсіндіріңіз» режимі – күрделі код блоктарын түсіндіреді</li>
-                            <li>Қателерді талдап, түзету ұсыныстарын береді</li>
-                            <li>Бірлескен жобаларда AI көмекші ретінде жұмыс істейді</li>
+                            <li>Күрделі алгоритмдерді түсіндіреді</li>
+                            <li>Кодты рефакторинг жасап, оңтайландырады</li>
+                            <li>Бағдарламалау сұрақтарына жауап береді</li>
+                            <li>Документация мен код комментарийлерін жазады</li>
                         </ul>
                     </div>
-                    <a class="card-link" href="https://replit.com/site/ghostwriter" target="_blank">🔗 Ресми сайт → replit.com/ghostwriter</a>
+                    <a class="card-link" href="https://chat.openai.com/" target="_blank">🔗 Ресми сайт → chat.openai.com</a>
+                </div>
+            </div>
+
+            <!-- Карточка 3: Claude -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🎭</div>
+                    <h2>Claude</h2>
+                    <button class="card-toggle-btn">▼</button>
+                </div>
+                <div class="card-details">
+                    <div class="card-description">
+                        Claude — Anthropic компаниясының AI ассистенті. Үлкен контекстімен (200K токен) 
+                        және қауіпсіздікке баса назар аударатындығымен ерекшеленеді.
+                    </div>
+                    <div class="card-abilities">
+                        <strong>✨ НЕ ІСТЕЙ АЛАДЫ:</strong>
+                        <ul>
+                            <li>100+ беттік кодты бірден өңдейді</li>
+                            <li>Қауіпсіз және этикалық код ұсынады</li>
+                            <li>Күрделі архитектуралық сұрақтарға жауап береді</li>
+                            <li>Кодты талдап, қателерді табады</li>
+                        </ul>
+                    </div>
+                    <a class="card-link" href="https://claude.ai/" target="_blank">🔗 Ресми сайт → claude.ai</a>
                 </div>
             </div>
         </div>
 
+        <!-- DeepSeek Chat бөлімі (Ollama арқылы) -->
+        <div class="chat-section" id="chatSection">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <h3>🤖 DeepSeek-V3.1 (671B Cloud)</h3>
+                    <span class="model-badge">Ollama Cloud | Тегін</span>
+                </div>
+                <p>☁️ Жергілікті Ollama арқылы cloud моделі | API ключ қажет емес</p>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <strong>DeepSeek-V3.1 (671B Cloud)</strong><br>
+                        Сәлем! Мен Ollama Cloud арқылы жұмыс істейтін DeepSeek моделімін.<br>
+                        <span class="setup-hint">
+                            💡 Алдымен терминалда: <code>ollama run deepseek-v3.1:671b-cloud</code>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <textarea id="chatInput" placeholder="Сұрағыңызды жазыңыз..." class="chat-input" rows="1"></textarea>
+                <button id="chatSendBtn" class="chat-send-btn">📤 Жіберу</button>
+            </div>
+            <div class="chat-status" id="chatStatus">
+                <span class="status-dot" id="statusDot"></span>
+                <span id="statusText">Ollama серверін тексеру...</span>
+            </div>
+        </div>
+
+        <!-- Менің тәжірибем бөлімі -->
         <div class="experience-section">
             <div class="exp-header">
                 <h3>📘 Менің тәжірибем</h3>
@@ -102,11 +143,20 @@
             </div>
             <div class="exp-details">
                 <div class="exp-content">
-                    <p><span class="badge">💡 Қолданып көрген құрал: <strong>Amazon CodeWhisperer</strong></span></p>
-                    <p>Мен бірнеше ай бойы <strong>Amazon CodeWhisperer</strong> көмекшісін VS Code ортасында сынап көрдім. Негізінен Python және TypeScript жобаларында қолдандым. Ең қатты әсер еткені – <strong>нақты уақыттағы қауіпсіздік кеңестері</strong>.</p>
-                    <p><strong>AWS Lambda функцияларын жазу кезінде уақытымды 30%-ға үнемдеді</strong>. Жалпы CodeWhisperer кодты тез жазуға және қауіпсіздік олқылықтарын азайтуға өте пайдалы.</p>
+                    <p><span class="badge">💡 Қолданып көрген құрал: <strong>GitHub Copilot + DeepSeek</strong></span></p>
+                    
+                    <p><strong>🔧 Қандай құрал көмектесті?</strong><br>
+                    Жұмысты орындау барысында маған ең көп көмектескен құрал — <strong>GitHub Copilot</strong> болды. Ол кодты жазғанда контекстке сай болжамдар жасап, уақытты үнемдеді. Сонымен қатар <strong>DeepSeek</strong> моделі күрделі сұрақтарға терең жауап беруге көмектесті.</p>
+                    
+                    <p><strong>⚠️ ЖИ нені дұрыс немесе ыңғайсыз жасады?</strong><br>
+                    <strong>Дұрыс жасағаны:</strong> Карточкалар мәтінін жазуда ЖИ нақты және мазмұнды сипаттамалар берді. CSS стильдерін ұйымдастыруға кеңес берді.<br>
+                    <strong>Ыңғайсыз жасағаны:</strong> Кейде артық ақпарат беріп, кодты шатастырып жіберді. Мұны мен өзім түзетіп, қажетсіз бөліктерді алып тастадым.</p>
+                    
+                    <p><strong>🚀 ЖИ 5 жылдан кейін әзірлеуші мамандығын қалай өзгертеді?</strong><br>
+                    Менің ойымша, ЖИ әзірлеушілердің жұмысын толығымен алмастырмайды, бірақ күнделікті тапсырмаларды айтарлықтай жеңілдетеді. Қарапайым кодтарды ЖИ жазады, ал әзірлеушілер архитектура, алгоритмдер және креативті шешімдерге көбірек көңіл бөледі. ЖИ көмекші ретінде әрекет етіп, адамдардың өнімділігін арттырады деп ойлаймын.</p>
+                    
                     <hr>
-                    <p>🔎 <strong>Қорытынды:</strong> ЖИ-құралдары күнделікті тасктарды жеңілдетіп, boilerplate кодты жазуды азайтады. Менің сүйіктім – Amazon CodeWhisperer.</p>
+                    <p>🔎 <strong>Қорытынды:</strong> ЖИ-құралдары — күшті көмекші, бірақ оларды саналы түрде қолданып, әр жол кодын түсіну маңызды. Бұл жобада ЖИ-ді тиімді пайдаланып, сапалы нәтижеге қол жеткіздім.</p>
                 </div>
             </div>
         </div>
